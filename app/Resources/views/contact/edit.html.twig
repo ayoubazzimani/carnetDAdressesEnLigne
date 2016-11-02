@@ -1,0 +1,29 @@
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="col-lg-4 col-md-4 col-md-offset-4 ">
+
+    <h1>modifier le contact</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input  type="submit" class="btn btn-info" value="enregistrer" />
+
+    {{ form_end(edit_form) }}
+
+    <ul></ul>
+
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-danger "value="supprimer">
+            {{ form_end(delete_form) }}
+
+    <ul></ul>
+    <a href="{{ path('contact_index') }}"class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>    retour à la liste</a>
+
+    </div>
+</div>
+{% endblock %}

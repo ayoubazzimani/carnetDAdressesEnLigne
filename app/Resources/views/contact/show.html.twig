@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Contact</h1>
+
+    <table class="table table-bordered ">
+        <tbody>
+
+            <tr>
+                <th>Nom : </th>
+                <td>{{ contact.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom : </th>
+                <td>{{ contact.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email : </th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Adresse : </th>
+                <td>{{ contact.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone : </th>
+                <td>{{ contact.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Site : </th>
+                <td>{{ contact.site }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-md-1 ">    <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span>   modifier</a></div>
+        <div class="col-md-1 ">
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-danger" value="supprimer">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>
+
+
+    <ul></ul>
+
+    <a href="{{ path('contact_index') }}"class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>    retour à la liste</a>
+
+
+{% endblock %}

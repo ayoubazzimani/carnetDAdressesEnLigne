@@ -1,0 +1,32 @@
+AppBundle\Entity\Contact:
+    type:  entity
+    table: null
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        adresse:
+            type: string
+            length: 255
+        telephone:
+            type: integer
+        site:
+            type: string
+            length: 255
+
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: contacts
+            cascade: [ persist ]

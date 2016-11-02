@@ -1,0 +1,14 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+        Bonjour " {{ app.user.username }} " vous êtes déjà connecté |
+        <a href="{{ path('fos_user_security_logout') }}" >  Déconnecter vous pour ouvrir une nouvelle session</a>
+
+    {% else %}
+        {{ include('FOSUserBundle:Security:login_content.html.twig') }}
+    {% endif %}
+
+
+{% endblock fos_user_content %}
